@@ -648,7 +648,7 @@ Formats a number with a specified `unitSymbol` and a specified number of decimal
 
     if(precision <= 0 && null != p[1]) {
       if(Std.parseFloat('0.${p[1]}') >= 0.5)
-        p[0] = p[0].substring(0, p[0].length-1) + (Std.parseFloat(p[0].substring(p[0].length-1)) + 1);
+        p[0] = (Std.parseFloat(p[0].substring(0, p[0].length-1)) * 10 + (Std.parseFloat(p[0].substring(p[0].length-1)) + 1)).toString();
     }
 
     var buf = [];
